@@ -21,7 +21,6 @@ RUN \
   sed -i 's/.*error_reporting.*/error_reporting(E_ALL ^ E_DEPRECATED);/' /app/bricks/includes/PHPReverseProxy.php && \
   sed -i 's/.*error_reporting.*/error_reporting(E_ALL ^ E_DEPRECATED);/' /app/bricks/includes/MySQLHandler.php && \
   echo 'session.save_path = "/tmp"' >> /etc/php5/apache2/php.ini && \
-
   wget -O /dvwa.zip https://github.com/RandomStorm/DVWA/archive/v1.9.zip  && \
   unzip /dvwa.zip && \
   cp -r /DVWA-1.9/* /app/dvwa && \
