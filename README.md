@@ -1,7 +1,7 @@
 Description
 ================
 
-Docker container for [Damn Vulnerable Web Application (DVWA)](http://www.dvwa.co.uk/) and [OWASP Bricks](http://sechow.com/bricks/)
+Docker container for [Damn Vulnerable Web Application (DVWA)](http://www.dvwa.co.uk/) and [OWASP Bricks](http://sechow.com/bricks/). This can be used independently also as this is just combination of 2 Vulnerable Web Applications installed in a docker container.
 
 
 Quick start
