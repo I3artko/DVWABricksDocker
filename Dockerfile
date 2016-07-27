@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Clean the /app directory before copying/installing anything & Update the repository sources list
 RUN rm -fr /app/* && \
-apt-get update && apt-get install -yqq wget unzip php5-curl && \
+apt-get update && apt-get install -yqq wget unzip php5-curl php5-gd && \
 rm -rf /var/lib/apt/lists/*
 
 ################################## BEGIN INSTALLATION ##############################
@@ -36,7 +36,7 @@ RUN \
   unzip /dvwa.zip && \
   cp -r /DVWA-1.9/* /app/dvwa && \
   rm -rf /DVWA-1.9 && \
-  sed -i "s/^\$_DVWA\[ 'db_user' \]     = 'root'/\$_DVWA[ 'db_user' ]     = 'admin'/g" /app/dvwa/config/config.inc.php && \
+  sed -i "s/^\$_DVWA\[ 'db_user' \]= 'root'/\$_DVWA[ 'db_user' ]     = 'admin'/g" /app/dvwa/config/config.inc.php && \
   sed -i "s/^allow_url_include = Off/allow_url_include = On/g" /etc/php5/apache2/php.ini && \
   chmod 777 /app/dvwa/hackable/uploads /app/dvwa/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt && \
   echo "sed -i \"s/p@ssw0rd/\$PASS/g\" /app/dvwa/config/config.inc.php" >> /create_mysql_admin_user.sh  && \
